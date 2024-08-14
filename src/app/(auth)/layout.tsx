@@ -13,7 +13,13 @@ export const metadata: Metadata = {
 };
 
 const AuthLayout = ({ children }: PropsWithChildren) => {
-  return <div className={`${urbanist.className}`}>{children}</div>;
+  return (
+    <div
+      className={`${urbanist.className} flex items-center justify-center h-full`}
+    >
+      {children}
+    </div>
+  );
 };
 
 export default AuthLayout;

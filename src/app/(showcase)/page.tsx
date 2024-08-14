@@ -13,7 +13,7 @@ export default function LandingPage() {
           Manager App. Start achieving your goals today!
         </p>
         <Link
-          href="/signup"
+          href="/sign-up"
           className={`${buttonVariants({
             size: "lg",
             variant: "secondary",

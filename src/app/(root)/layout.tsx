@@ -1,3 +1,4 @@
+import { Header } from "@/components/RootComponents";
 import { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import { PropsWithChildren } from "react";
@@ -13,7 +14,12 @@ export const metadata: Metadata = {
 };
 
 const RootLayout = ({ children }: PropsWithChildren) => {
-  return <div className={`${manrope.className}`}>{children}</div>;
+  return (
+    <div className={`${manrope.className}`}>
+      <Header />
+      {children}
+    </div>
+  );
 };
 
 export default RootLayout;
