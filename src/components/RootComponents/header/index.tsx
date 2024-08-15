@@ -1,3 +1,4 @@
+import { MobileSidebar } from "@/components/DashboardComponents";
 import { Button } from "@/components/ui/button";
 import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
 import { Plus } from "lucide-react";
@@ -8,6 +9,7 @@ const Header = () => {
     <nav className="bg-slate-200 w-full p-3">
       <div className="mx-auto max-w-7xl flex justify-between">
         <div className="flex items-center gap-4">
+          <MobileSidebar />
           <Image
             src="/logo.png"
             alt="Logo"

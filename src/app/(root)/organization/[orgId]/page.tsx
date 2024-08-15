@@ -1,7 +1,12 @@
-import { auth } from "@clerk/nextjs/server";
+import OrganizationControl from "@/components/OrgComponents/orgControl";
 
 const OrganizationPage = () => {
-  return <div>This is OrganizationPage</div>;
+  return (
+    <div>
+      <OrganizationControl />
+      This is OrganizationPage
+    </div>
+  );
 };
 
 export default OrganizationPage;
