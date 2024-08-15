@@ -15,3 +15,7 @@ For UI components, my first choice is `shadcn-ui`. It contains may customizable 
 ## State management
 
 For state management, I preferred `zustand` for this specific project. Other libraries like `redux` can also be used. The main reason I used `zustand` is that it has less boilerplate code and easy to setup which is perfect for small project like this.
+
+## Server actions
+
+Server actions are basically functions that run on the server side. We use `use server` directive to mark a component as a server component. The biggest advantage is that component comes pre-rendered from the server which reduces the rendering time and improves the performance of the application.
