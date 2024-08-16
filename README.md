@@ -19,3 +19,11 @@ For state management, I preferred `zustand` for this specific project. Other lib
 ## Server actions
 
 Server actions are basically functions that run on the server side. We use `use server` directive to mark a component as a server component. The biggest advantage is that component comes pre-rendered from the server which reduces the rendering time and improves the performance of the application.
+
+## Custom Hooks
+
+Custom hooks are awesome. They let you use builtin hooks outside the React Component. We create custom hooks by prefixing `use` before the function name. In this project I've created `useAction` hook which is very similar to `react-query` providing the loading, error states, execute the function inside the hook.
+
+## Reusuable Form Component
+
+I've also create reusuable form components like `FormInput`, `SubmitButton`, and more.
