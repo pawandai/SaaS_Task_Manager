@@ -2,6 +2,7 @@ import BoardList from "@/components/DashboardComponents/boards/boardList";
 import Info from "@/components/DashboardComponents/organization/info";
 import OrganizationControl from "@/components/OrgComponents/orgControl";
 import { Separator } from "@/components/ui/separator";
+import { Suspense } from "react";
 
 const OrganizationPage = async () => {
   return (
@@ -10,7 +11,9 @@ const OrganizationPage = async () => {
       <Info />
       <Separator />
       <div className="px-2 md:px-4">
-        <BoardList />
+        <Suspense fallback={<BoardList.Skeleton />}>
+          <BoardList />
+        </Suspense>
       </div>
     </div>
   );

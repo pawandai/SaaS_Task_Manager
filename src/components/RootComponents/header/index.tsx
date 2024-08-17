@@ -1,4 +1,5 @@
 import { MobileSidebar } from "@/components/DashboardComponents";
+import FormPopover from "@/components/DashboardComponents/form/formPopover";
 import { Button } from "@/components/ui/button";
 import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
 import { Plus } from "lucide-react";
@@ -18,12 +19,16 @@ const Header = () => {
             className="sm:block hidden"
           />
 
-          <Button size={"sm"} className="hidden sm:block">
-            Create
-          </Button>
-          <Button size={"sm"} className="sm:hidden block">
-            <Plus className="h-5 w-5" />
-          </Button>
+          <FormPopover align="start" side="bottom" sideOffset={18}>
+            <Button size={"sm"} className="hidden sm:block">
+              Create
+            </Button>
+          </FormPopover>
+          <FormPopover>
+            <Button size={"sm"} className="sm:hidden block">
+              <Plus className="h-5 w-5" />
+            </Button>
+          </FormPopover>
         </div>
         <div className="flex items-center justify-center gap-4">
           <OrganizationSwitcher

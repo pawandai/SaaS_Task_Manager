@@ -13,6 +13,8 @@ import SubmitButton from "./submitButton";
 import { useAction } from "@/hooks/useAction";
 import { createBoard } from "@/actions";
 import { toast } from "sonner";
+import { ElementRef, useRef } from "react";
+import { useRouter } from "next/navigation";
 
 interface FormPopoverProps {
   children: React.ReactNode;
@@ -27,9 +29,14 @@ const FormPopover = ({
   align,
   sideOffset = 0,
 }: FormPopoverProps) => {
+  const closeRef = useRef<ElementRef<"button">>(null);
+  const router = useRouter();
+
   const { execute, fieldErrors } = useAction(createBoard, {
     onSuccess: (data) => {
       toast.success("Board created successfully");
+      closeRef.current?.click();
+      router.push(`/board/${data.id}`);
     },
     onError: (error) => {
       toast.error(error);
@@ -38,8 +45,13 @@ const FormPopover = ({
 
   const onSubmit = (formData: FormData) => {
     const title = formData.get("title") as string;
+    // const image = formData.get("image") as string;
 
-    execute({ title });
+    execute({
+      title,
+      image:
+        "https://images.unsplash.com/photo-1723403804231-f4e9b515fe9d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    });
   };
 
   return (
@@ -54,7 +66,7 @@ const FormPopover = ({
         <div className="text-sm font-medium text-center text-slate-600 pb-4">
           Create Board
         </div>
-        <PopoverClose asChild>
+        <PopoverClose ref={closeRef} asChild>
           <Button
             className="h-auto w-auto p-2 absolute top-2 right-2 text-slate-600"
             variant="ghost"
