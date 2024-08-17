@@ -1,8 +1,8 @@
 "use server";
 
-import { database } from "@/lib/db";
-import { revalidatePath } from "next/cache";
 import { createBoard } from "./createBoard";
+import { updateBoard } from "./updateBoard";
+import { deleteBoard } from "./deleteBoard";
 
 export type State = {
   errors?: {
@@ -11,14 +11,4 @@ export type State = {
   message?: string | null;
 };
 
-export async function deleteBoard(id: string) {
-  await database.board.delete({
-    where: {
-      id,
-    },
-  });
-
-  revalidatePath("/organization/org_2kgKGsyKPAvbE86R4IEhdPP2eQq");
-}
-
-export { createBoard };
+export { createBoard, updateBoard, deleteBoard };
