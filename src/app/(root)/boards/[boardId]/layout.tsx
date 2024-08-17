@@ -3,6 +3,7 @@ import { database } from "@/lib/db";
 import { auth } from "@clerk/nextjs/server";
 import { notFound, redirect } from "next/navigation";
 import { ReactNode } from "react";
+import { Toaster } from "sonner";
 
 const BoardIdLayout = async ({
   children,
@@ -29,6 +30,7 @@ const BoardIdLayout = async ({
       className="relative h-[92vh] bg-no-repeat bg-cover bg-center"
       style={{ backgroundImage: `url(${board.imageFullUrl})` }}
     >
+      <Toaster richColors position="top-center" />
       <BoardNavbar data={board} />
       <div className="absolute inset-0 bg-black/20" />
       <main className="relative pt-8 h-full">{children}</main>

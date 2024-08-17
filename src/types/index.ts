@@ -1,3 +1,5 @@
+import { Card, List } from "@prisma/client";
+
 export type Organization = {
   id: string;
   slug: string;
@@ -10,3 +12,6 @@ export type MobileSidebarStore = {
   onOpen: () => void;
   onClose: () => void;
 };
+
+export type ListWithCard = List & { cards: Card[] };
+export type CardWithList = Card & { list: List };
