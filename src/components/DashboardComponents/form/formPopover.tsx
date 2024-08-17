@@ -12,7 +12,7 @@ import FormInput from "./formInput";
 import SubmitButton from "./submitButton";
 import { useAction } from "@/hooks/useAction";
 import { createBoard } from "@/actions";
-import FormErrors from "./formErrors";
+import { toast } from "sonner";
 
 interface FormPopoverProps {
   children: React.ReactNode;
@@ -29,10 +29,10 @@ const FormPopover = ({
 }: FormPopoverProps) => {
   const { execute, fieldErrors } = useAction(createBoard, {
     onSuccess: (data) => {
-      console.log({ data });
+      toast.success("Board created successfully");
     },
     onError: (error) => {
-      console.log({ error });
+      toast.error(error);
     },
   });
 
@@ -64,6 +64,7 @@ const FormPopover = ({
         </PopoverClose>
         <form action={onSubmit} className="space-y-4">
           <div className="space-y-4">
+            {/* <ImagePicker id="image" errors={fieldErrors} /> */}
             <FormInput
               id="title"
               label="Board"
