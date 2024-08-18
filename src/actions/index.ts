@@ -5,6 +5,8 @@ import { updateBoard } from "./updateBoard";
 import { deleteBoard } from "./deleteBoard";
 import { createList } from "./createList";
 import { updateList } from "./updateList";
+import { deleteList } from "./deleteList";
+import { copyList } from "./copyList";
 
 export type State = {
   errors?: {
@@ -13,4 +15,12 @@ export type State = {
   message?: string | null;
 };
 
-export { createBoard, updateBoard, deleteBoard, createList, updateList };
+export {
+  createBoard,
+  updateBoard,
+  deleteBoard,
+  createList,
+  updateList,
+  deleteList,
+  copyList,
+};
