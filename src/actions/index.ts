@@ -1,5 +1,3 @@
-"use server";
-
 import { createBoard } from "./createBoard";
 import { updateBoard } from "./updateBoard";
 import { deleteBoard } from "./deleteBoard";
@@ -8,6 +6,8 @@ import { updateList } from "./updateList";
 import { deleteList } from "./deleteList";
 import { copyList } from "./copyList";
 import { createCard } from "./createCard";
+import { reorderList } from "./reorderList";
+import { reorderCard } from "./reorderCard";
 
 export type State = {
   errors?: {
@@ -25,4 +25,6 @@ export {
   deleteList,
   copyList,
   createCard,
+  reorderList,
+  reorderCard,
 };

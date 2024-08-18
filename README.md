@@ -31,3 +31,7 @@ I've also create reusuable form components like `FormInput`, `SubmitButton`, and
 ### Unsplash API
 
 Fetching random images using unsplash api.
+
+### Drag n Drop functionality
+
+I've used `@hello-pangea/dnd` for implementing drag and drop, and reordering the tasks. It reflects the changes immediately to the users (`Optimistic Updates`) and mutates the order of task cards in the database.
