@@ -8,6 +8,9 @@ import { copyList } from "./copyList";
 import { createCard } from "./createCard";
 import { reorderList } from "./reorderList";
 import { reorderCard } from "./reorderCard";
+import { updateCard } from "./updateCard";
+import { copyCard } from "./copyCard";
+import { deleteCard } from "./deleteCard";
 
 export type State = {
   errors?: {
@@ -27,4 +30,7 @@ export {
   createCard,
   reorderList,
   reorderCard,
+  updateCard,
+  copyCard,
+  deleteCard,
 };

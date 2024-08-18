@@ -13,5 +13,12 @@ export type MobileSidebarStore = {
   onClose: () => void;
 };
 
+export type CardModalStore = {
+  id?: string;
+  isOpen: boolean;
+  onOpen: (id: string) => void;
+  onClose: () => void;
+};
+
 export type ListWithCard = List & { cards: Card[] };
 export type CardWithList = Card & { list: List };
