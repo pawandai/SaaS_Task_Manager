@@ -11,10 +11,11 @@ import ListOptions from "./listOptions";
 
 interface ListHeaderProps {
   data: List;
+  onAddCard: () => void;
 }
 
-const ListHeader = ({ data }: ListHeaderProps) => {
-  const { execute, fieldErrors } = useAction(updateList, {
+const ListHeader = ({ data, onAddCard }: ListHeaderProps) => {
+  const { execute } = useAction(updateList, {
     onSuccess: (data) => {
       toast.success("List renamed successfully");
       setTitle(data.title);
@@ -88,7 +89,7 @@ const ListHeader = ({ data }: ListHeaderProps) => {
           {data.title}
         </div>
       )}
-      <ListOptions onAddCard={() => {}} data={data} />
+      <ListOptions onAddCard={onAddCard} data={data} />
     </div>
   );
 };

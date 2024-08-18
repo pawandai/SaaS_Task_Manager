@@ -7,6 +7,7 @@ import { createList } from "./createList";
 import { updateList } from "./updateList";
 import { deleteList } from "./deleteList";
 import { copyList } from "./copyList";
+import { createCard } from "./createCard";
 
 export type State = {
   errors?: {
@@ -23,4 +24,5 @@ export {
   updateList,
   deleteList,
   copyList,
+  createCard,
 };
