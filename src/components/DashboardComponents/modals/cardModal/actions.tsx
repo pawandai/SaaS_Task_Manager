@@ -7,7 +7,6 @@ import { useAction, useCardModal } from "@/hooks";
 import { CardWithList } from "@/types";
 import { Copy, Trash } from "lucide-react";
 import { useParams } from "next/navigation";
-import { useState } from "react";
 import { toast } from "sonner";
 
 interface ActionsProps {
