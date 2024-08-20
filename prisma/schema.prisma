@@ -79,6 +79,16 @@ model OrgLimit {
   updatedAt DateTime @updatedAt
 }
 
+model OrgSubscription {
+  id    String @id @default(uuid())
+  orgId String @unique
+
+  stripeCustomerId       String?   @unique @map("stripe_customer_id")
+  stripeSubscriptionId   String?   @unique @map("stripe_subscription_id")
+  stripePriceId          String?   @unique @map("stripe_price_id")
+  stripeCurrentPeriodEnd DateTime? @map("stripe_current_period_end")
+}
+
 generator client {
   provider = "prisma-client-js"
 }

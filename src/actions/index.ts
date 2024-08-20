@@ -11,6 +11,7 @@ import { reorderCard } from "./reorderCard";
 import { updateCard } from "./updateCard";
 import { copyCard } from "./copyCard";
 import { deleteCard } from "./deleteCard";
+import { stripeRedirect } from "./stripeRedirect";
 
 export type State = {
   errors?: {
@@ -33,4 +34,5 @@ export {
   updateCard,
   copyCard,
   deleteCard,
+  stripeRedirect,
 };

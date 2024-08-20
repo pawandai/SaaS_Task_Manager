@@ -15,6 +15,7 @@ import { createBoard } from "@/actions";
 import { toast } from "sonner";
 import { ElementRef, useRef } from "react";
 import { useRouter } from "next/navigation";
+import { useProModal } from "@/hooks/useProModal";
 
 interface FormPopoverProps {
   children: React.ReactNode;
@@ -29,6 +30,7 @@ const FormPopover = ({
   align,
   sideOffset = 0,
 }: FormPopoverProps) => {
+  const { onOpen } = useProModal();
   const closeRef = useRef<ElementRef<"button">>(null);
   const router = useRouter();
 
@@ -40,6 +42,7 @@ const FormPopover = ({
     },
     onError: (error) => {
       toast.error(error);
+      onOpen();
     },
   });
 

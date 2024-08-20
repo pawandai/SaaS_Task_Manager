@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { CardModal } from "../DashboardComponents/modals";
+import ProModal from "../DashboardComponents/modals/proModal";
 
 export const ModalProvider = () => {
   const [isMounted, setIsMounted] = useState<boolean>(false);
@@ -15,6 +16,7 @@ export const ModalProvider = () => {
   return (
     <>
       <CardModal />
+      <ProModal />
     </>
   );
 };

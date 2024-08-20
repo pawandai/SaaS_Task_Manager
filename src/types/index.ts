@@ -20,5 +20,11 @@ export type CardModalStore = {
   onClose: () => void;
 };
 
+export type ProModalStore = {
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+};
+
 export type ListWithCard = List & { cards: Card[] };
 export type CardWithList = Card & { list: List };
