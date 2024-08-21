@@ -9,14 +9,16 @@ import { CreateBoardSchema } from "./schema";
 import { createAuditLog } from "@/lib/createAuditLog";
 import { ACTION, ENTITY_TYPE } from "@prisma/client";
 import { hasAvailableCount, increaseAvailableCount } from "@/lib/orgLimit";
+import { checkSubscription } from "@/lib/subscription";
 
 const handler = async (data: InputType): Promise<ReturnType> => {
   const { userId, orgId } = auth();
   if (!userId || !orgId) return { error: "Unauthorized" };
 
   const canCreate = await hasAvailableCount();
+  const isPro = await checkSubscription();
 
-  if (!canCreate)
+  if (!canCreate && !isPro)
     return {
       error:
         "You have reached the maximum limit of boards for your organization.",
@@ -54,8 +56,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
           "https://images.unsplash.com/photo-1723403804231-f4e9b515fe9d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
     });
-
-    await increaseAvailableCount();
+    if (!isPro) await increaseAvailableCount();
 
     await createAuditLog({
       entityTitle: board.title,
