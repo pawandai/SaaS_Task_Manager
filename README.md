@@ -2,7 +2,28 @@
 
 This is a task manager application like [trello](https://trello.com/)
 
-## Breakdown of the Application
+___
+
+#### Run this app Locally
+
+```bash
+git clone https://github.com/pawandai/Software_As_A_Service.git
+```
+```bash
+cd Software_As_A_Service
+```
+Create the `.env` file based on `.env.example` file
+```bash
+npm install
+```
+```bash
+npm run dev
+```
+
+OR, visit [Live Demo.](https://tasks-saas.vercel.app/)
+
+### Breakdown of the Application
+___
 
 ### Authentication
 
