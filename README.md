@@ -41,6 +41,10 @@ For state management, I preferred `zustand` for this specific project. Other lib
 
 Server actions are basically functions that run on the server side. We use `use server` directive to mark a component as a server component. The biggest advantage is that component comes pre-rendered from the server which reduces the rendering time and improves the performance of the application.
 
+### React Hooks
+
+Use of different builtin hooks like useState, useEffect, useRef, useLocalStorage(from usehook-ts), etc.
+
 ### Custom Hooks
 
 Custom hooks are awesome. They let you use builtin hooks outside the React Component. We create custom hooks by prefixing `use` before the function name. In this project I've created `useAction` hook which is very similar to `react-query` providing the loading, error states, execute the function inside the hook.
